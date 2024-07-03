@@ -1,0 +1,75 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header
+{
+    background-color: #353535;
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a
+{
+   text-decoration: none;
+   color:white; 
+   font-size: 20px; 
+   margin-left: 20px;
+}
+
+nav a:hover
+{
+    background-color: rgb(133, 74, 133);
+    color: whitesmoke;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+section
+{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns:repeat(8,1fr);
+    grid-template-rows:repeat(8,1fr);
+    gap: 5px;
+}
+
+.name
+{   
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+}
+
+.name h1
+{
+    font-size: 40px;
+    color: white;
+    background-color: rgb(61, 32, 88);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.me_description 
+{
+    grid-column: 1 / 4;
+    grid-row: 2 / 5;
+    font-size: 15px;  
+}
+
+b
+{
+    font-size: 20px;
+}
+
+.yo_img
+{
+    grid-column: 5 / 10;
+    grid-row: 1 / 8;  
+}
+
