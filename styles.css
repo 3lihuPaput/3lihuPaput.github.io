@@ -9,59 +9,85 @@ body
     height: 100vh;
 }
 
-header
+header 
 {
     height: 10%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    box-shadow: 0 10px 15px -10px rgba(128, 0, 128, 0.75); 
+    padding: 0 20px;
+    box-shadow: 0 10px 15px -10px rgba(128, 0, 128, 0.75);
+    position: relative;
 }
 
-.logo
+.logo 
 {
-    color: rgb(172, 11, 172); 
+    color: rgb(172, 11, 172);
     display: flex;
     justify-content: space-around;
-    align-items: center;  
+    align-items: center;
 }
 
-.logo i
+.logo i 
 {
     font-size: 30px;
     margin-right: 20px;
 }
 
+nav 
+{
+    display: flex;
+    align-items: center;
+}
+
 nav a 
 {
     color: rgb(255, 255, 255);
-    text-decoration: none; 
+    text-decoration: none;
     font-family: 'Trebuchet MS';
     font-size: 22px;
     margin-left: 20px;
-    position: relative; 
+    position: relative;
 }
 
 nav a::after 
 {
-    content: ''; 
+    content: '';
     position: absolute;
-    bottom: -3px; 
+    bottom: -3px;
     left: 0;
     width: 0;
-    height: 2px; 
-    background-color: transparent; 
-    transition: width 0.3s ease; 
+    height: 2px;
+    background-color: transparent;
+    transition: width 0.3s ease;
 }
 
-nav a:hover::after {
-    width: 100%; 
-    background-color: rgb(172, 11, 172); 
-}
-
-nav a:hover
+nav a:hover::after 
 {
-    color: rgb(172, 11, 172) ;
+    width: 100%;
+    background-color: rgb(172, 11, 172);
+}
+
+nav a:hover 
+{
+    color: rgb(172, 11, 172);
+}
+
+.menu-icon 
+{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.menu-icon div 
+{
+    height: 3px;
+    width: 100%;
+    background-color: white;
 }
 
 /*-------------------- section1 --------------------*/
@@ -88,9 +114,6 @@ nav a:hover
 {
     color: rgb(172, 11, 172); 
     font-size: 50px;
-    /*font-family: "Belanosima", sans-serif;
-    font-weight: 400;
-    font-style: normal;*/
     font-family: "Londrina Solid", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -447,4 +470,221 @@ nav a:hover
 {
     font-size: 3em;
     color: white;
+}
+
+/*------------- RESPONSIVA --------------*/
+@media (max-width: 600px) 
+{
+    /*----------- HEADER -------------*/
+
+    nav {
+        display: none;
+        flex-direction: column;
+        background-color: rgb(172, 11, 172);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        margin: 10px 0;
+        font-size: 20px;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+
+    /*----------- SECTION 1 -------------*/
+    #acercademi 
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 10px;
+    }
+
+    .me_description 
+    {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .me_description h1,
+    .me_description h2 
+    {
+        font-size: 24px;
+    }
+
+    .me_photo 
+    {
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .me_photo img 
+    {
+        height: auto;
+        width: 40%;
+    }
+
+ /*----------- SECTION 2 -------------*/
+    #educacion 
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 10px;
+        height: 160%;
+    }
+
+    .title_edu 
+    {
+        grid-column: 1 / -1;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .box_edu, .box2_edu 
+    {
+        grid-column: 1 / -1;
+        grid-row: auto;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .box_edu
+    {
+        display: flex;
+        align-items: center; 
+    }
+
+    .box2_edu
+    {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .content_edu 
+    {
+        width: 90%;
+        height: 70%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .img_school img 
+    {
+        height: auto;
+        width: 20%;
+    }
+
+    /*----------- SECTION 3 -------------*/
+
+    #proyectos 
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        height: auto;
+    }
+
+    .proyects 
+    {
+        grid-column: 1 / -1;   
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 10px;
+        text-align: center;
+    }
+
+    .proyects h1
+    {
+        font-size: 35px;
+    }
+
+    .box_proye 
+    {
+        grid-column: 1 / -1;
+        grid-row: auto;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .content_proye 
+    {
+        width: 90%;
+        height: auto; /* Permite que el alto se ajuste automáticamente */
+    }
+
+    .info_proye 
+    {
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img_proye  
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img_proye img 
+    {
+        height: auto;
+        width: 50%;
+    }
+
+    /*----------- SECTION 4 -------------*/
+
+    #exp_laboral {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 10px;
+        height: auto;
+    }
+
+    .experience {
+        grid-column: 1 / -1;
+        font-size: 20px;
+        text-align: centers;
+    }
+
+    .exp_info {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    .img_exp {
+        grid-column: 1 / -1;
+        grid-row: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img_exp img {
+        width: 70%;
+        height: auto;
+    }
+
+    .jobs {
+        width: 90%;
+        padding: 10px;
+    }
+
 }
