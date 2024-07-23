@@ -117,7 +117,7 @@ nav a:hover
 .me_description h1
 {
     color: rgb(172, 11, 172); 
-    font-size: 50px;
+    font-size: 40px;
     font-family: "Londrina Solid", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -480,6 +480,12 @@ nav a:hover
 {
     font-size: 25px;
     font-weight: bold;
+    margin-left: 10px;
+}
+
+.info_social a:hover
+{
+    color: white;
 }
 
 .info_social div 
@@ -489,10 +495,16 @@ nav a:hover
     gap: 10px;
 }
 
+.info_social a
+{
+    text-decoration: none;
+    color: black;
+}
+
+
 .info_social i
 {
     font-size: 3em;
-    color: white;
 }
 
 /*------------- RESPONSIVA --------------*/
